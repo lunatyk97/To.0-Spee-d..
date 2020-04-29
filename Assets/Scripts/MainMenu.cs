@@ -19,4 +19,19 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void ToSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+    public void ToWins()
+    {
+        SceneManager.LoadScene("Wins");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

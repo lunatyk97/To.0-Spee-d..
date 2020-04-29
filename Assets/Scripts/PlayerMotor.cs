@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMotor : MonoBehaviour
 {
-    private CharacterController controller;
+    public GameObject FireObject;
     
+    private CharacterController controller;
     private Vector3 moveVector;
 
+    public float baseSpeed = 5.0f;
     private float speed = 5.0f;
     private float verticalVelocity = 0.0f;
     private float gravity = 12.0f;
@@ -20,9 +23,12 @@ public class PlayerMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GamePause>().setUnPause();
+        Cursor.visible = false;
         animationDuration = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMotor>().ShowAnimationDuration();
         controller = GetComponent<CharacterController>();
         startTime = Time.time;
+        FireObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,7 +39,7 @@ public class PlayerMotor : MonoBehaviour
 
         if(Time.time - startTime < animationDuration)
         {
-            controller.Move(Vector3.forward * speed * Time.deltaTime);
+            controller.Move(Vector3.forward * baseSpeed * Time.deltaTime);
             return;
         }
 
@@ -48,7 +54,7 @@ public class PlayerMotor : MonoBehaviour
             verticalVelocity -= gravity * Time.deltaTime;
         }
         //X - prawo lewo
-        moveVector.x = Input.GetAxis("Horizontal") * speed;
+        moveVector.x = Input.GetAxis("Horizontal") * speed * 0.7f;
 
         //Y - gora dol
         moveVector.y = verticalVelocity;
@@ -61,17 +67,27 @@ public class PlayerMotor : MonoBehaviour
 
     public void SetSpeed(float modifier)
     {
-        speed += modifier;
+        //speed += modifier;
+        //speed += Mathf.Pow(-(10 / (modifier)), 2) / 20;
+        speed = baseSpeed * 2f + (-(1 / modifier) * 10) + modifier / 5;
+        Debug.Log("speed " + speed);
     }
 
     //obsługa kolizji
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         //if (hit.point.z > transform.position.z + (controller.radius / 2)) //dzielenie usprawnia kolizje
-        if(hit.point.z > transform.position.z + 0.1f && hit.gameObject.tag == "Killer")
+        // controller.radius może być zastąpione przez 0.1
+        if(hit.point.z > transform.position.z + 0.1 && hit.gameObject.tag == "Killer")
         {
             Death();
         }
+
+        if (hit.point.z > transform.position.z + 0.1 && hit.gameObject.tag == "Killer")
+        {
+            Death();
+        }
+
 
         if (hit.gameObject.tag == "WallKiller")
         {
@@ -83,6 +99,10 @@ public class PlayerMotor : MonoBehaviour
     {
         Debug.Log("dead");
         isDead = true;
+        FireObject.SetActive(true);
         GetComponent<Score>().OnDeath();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GamePause>().setDeath();
+        Cursor.visible = true;
     }
+
 }

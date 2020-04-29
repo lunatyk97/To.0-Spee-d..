@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CA042356-148A-9635-868D-7AF23A4DB21C}</ProjectGuid>
+    <ProjectGuid>{A00F81DC-F9FE-1060-A91B-3BCD013BF106}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,36 +65,46 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraMotor.cs" />
     <Compile Include="Assets\Scripts\DeathMenu.cs" />
+    <Compile Include="Assets\Scripts\GamePause.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\Proby\HighscoreTable.cs" />
+    <Compile Include="Assets\Scripts\Proby\MusicSettings.cs" />
+    <Compile Include="Assets\Scripts\Proby\OdczytZPliku.cs" />
+    <Compile Include="Assets\Scripts\Proby\SaveData.cs" />
+    <Compile Include="Assets\Scripts\Proby\ZapisDoPliku.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\TileManager.cs" />
+    <Compile Include="Assets\Scripts\WindowSettings.cs" />
+    <None Include="Assets\Assety Bartka\BrokenVector\LowPolyShaders\Shaders\LowPolyUnlitShader.shader" />
+    <None Include="Assets\Assety Bartka\BrokenVector\LowPolyShaders\Shaders\LowPolyPBRShader.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Projekty/UNITY/ToSpeed/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Projekty/UNITY/ToSpeed 1.5/ToSpeed 1.5/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
